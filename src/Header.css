@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --white-color: #FFFFFF;
+  --light-gray-color: #DADADA;
+  --dark-color: #000000;
+  --primary-color: #2c3e50;
+  --secondary-color: #27ae60;
+  --secondary-dark: #1e824c;
+  --medium-gray-color: #ccc;
+  --transparent-black: rgba(0, 0, 0, 0.3);
+  --transparent-white: rgba(255, 255, 255, 0.7);
+  --light-green-color: #e6f4ea;
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.3rem;
+  --font-size-xxxl: 3rem;
+  --font-size-xxxxl: 4rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --border-radius-s: 8px;
+  --border-radius-m: 30px;
+  --border-radius-circle: 50%;
+  --site-max-width: 1300px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  direction: ltr;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  z-index: 5;
+  width: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.215);
+  transition: background 0.9s ease;
+  height: 100px;
+  top: 0;
+  left: 0;
+}
+
+header.scrolled {
+  background: #000000;
+}
+
+.navbar {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+  max-width: var(--site-max-width);
+  width: 100%;
+  height: 100%;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image {
+  width: 70px;
+  height: 60px;
+  vertical-align: middle;
+}
+
+.logo-text {
+  color: #ffffff;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 2.3rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: color 0.3s;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: inline-block;
+  }
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2.3rem;
+  cursor: pointer;
+  margin-left: 0;
+  z-index: 10;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.nav-menu {
+  gap: 10px;
+  display: flex;
+  width: auto;
+  align-items: center;
+}
+
+.nav-menu .nav-link {
+  padding: 10px 18px;
+  color: #FFFFFF;
+  font-size: var(--font-size-m);
+  transition: 0.3s ease;
+  text-decoration: none;
+  width: auto;
+  position: relative;
+  font-weight: var(--font-weight-medium);
+}
+
+.nav-menu .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-menu .nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-menu .nav-link:hover {
+  color: var(--secondary-color);
+}
+
+header.scrolled .nav-menu .nav-link:hover {
+  color: var(--white-color);
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    max-width: 95vw;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 86px;
+  }
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    padding: 10px 16px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 200px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: rgba(16, 16, 16, 0.97);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 0 0 0 12px;
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: right 0.3s;
+    z-index: 9;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    border-bottom: 1px solid #222;
+  }
+
+  .nav-menu .nav-link:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-logo .logo-text {
+    font-size: 1.2rem;
+  }
+  .logo-image {
+    width: 50px;
+    height: 40px;
+    margin-right: 5px;
+  }
+  .nav-menu {
+    width: 100vw;
+    right: 0;
+    border-radius: 0;
+  }
+}
