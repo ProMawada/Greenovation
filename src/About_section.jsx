@@ -57,9 +57,9 @@ const AboutSection = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="dropdownmenu">
-                <Dropdown.Item href="http://localhost:3001" target="_blank" rel="noopener noreferrer">Air Pollution Control & Reduction</Dropdown.Item>
-                <Dropdown.Item href="http://localhost:3003" target="_blank" rel="noopener noreferrer">Water Pollution Treatment & Prevention</Dropdown.Item>
-                <Dropdown.Item href="http://localhost:3002" target="_blank" rel="noopener noreferrer">Soil Conservation & Pollution Management</Dropdown.Item>
+                <Dropdown.Item href="https://air-pollution-rouge.vercel.app/" target="_blank" rel="noopener noreferrer">Air Pollution Control & Reduction</Dropdown.Item>
+                <Dropdown.Item href="https://water-pollution.vercel.app/" target="_blank" rel="noopener noreferrer">Water Pollution Treatment & Prevention</Dropdown.Item>
+                <Dropdown.Item href="https://soil-pollution-sage.vercel.app/" target="_blank" rel="noopener noreferrer">Soil Conservation & Pollution Management</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <img 
